@@ -81,12 +81,12 @@ fun FsSensorLabScreen(onBack: () -> Unit) {
                         sb.append("Магнитометр: ${if (mag != null) "есть" else "нет"}\n")
                         sb.append("Свет: ${if (light != null) "есть (${light.maximumRange} lx max)" else "нет"}\n")
                         sb.append("Близость: ${if (prox != null) "есть (${prox.maximumRange})" else "нет"}\n")
-                        val snapshot = arrayOf(0f, 0f, 0f)
+                        val snapshot = FloatArray(3) { 0f }
                         val lock = Object()
                         val l = object : SensorEventListener {
                             override fun onSensorChanged(e: SensorEvent) {
                                 e.values.copyInto(snapshot, 0, 0, minOf(3, e.values.size))
-                                synchronized(lock) { (lock as Object).notifyAll() }
+                                synchronized(lock) { lock.notifyAll() }
                             }
                             override fun onAccuracyChanged(s: Sensor, a: Int) {}
                         }
