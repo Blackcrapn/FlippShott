@@ -18,11 +18,11 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.droid.dolphy"
+        applicationId = "com.flippshott.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 25
-        versionName = "2.5"
+        versionCode = 30
+        versionName = "3.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 

@@ -995,6 +995,21 @@ fun MainScaffold(
             composable("other/wifi_print") { WifiPrintScreen(screenNavController) }
             composable("smarttv_cast") { SmartTvCastScreen(screenNavController) }
             composable("other/smarttv_cast") { SmartTvCastScreen(screenNavController) }
+            // FlippShott Lab — 24 новые функции (generic host by id)
+            composable(
+                route = "flippshott/{featureId}",
+                arguments = listOf(navArgument("featureId") { type = NavType.StringType }),
+            ) { backStackEntry ->
+                val fid = backStackEntry.arguments?.getString("featureId") ?: return@composable
+                com.droid.dolphy.flippshott.FsFeatureHost(fid) { screenNavController.popBackStack() }
+            }
+            composable(
+                route = "other/flippshott/{featureId}",
+                arguments = listOf(navArgument("featureId") { type = NavType.StringType }),
+            ) { backStackEntry ->
+                val fid = backStackEntry.arguments?.getString("featureId") ?: return@composable
+                com.droid.dolphy.flippshott.FsFeatureHost(fid) { screenNavController.popBackStack() }
+            }
 
             composable("ble_section/{section}") { backStackEntry ->
                 val sectionRoute = backStackEntry.arguments?.getString("section") ?: return@composable
@@ -3392,6 +3407,10 @@ fun SettingsScreen(spamViewModel: SpamViewModel, dolphyViewModel: DolphyViewMode
                 NavigationCustomizationSections(spamViewModel)
             }
 
+            item {
+                com.droid.dolphy.flippshott.FlippShottCustomizationSection(spamViewModel)
+            }
+
 
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(M3SegmentedListItemSpacing)) {
@@ -3412,7 +3431,7 @@ fun SettingsScreen(spamViewModel: SpamViewModel, dolphyViewModel: DolphyViewMode
                             SettingsItem(onClick = { uriHandler.openUri("https://t.me/Dolphy_app_official") }) {
                                 Icon(Icons.AutoMirrored.Filled.Send, null, tint = accentColor, modifier = Modifier.size(24.dp))
                                 Spacer(Modifier.width(12.dp))
-                                Text("Dolphy dev", style = MaterialTheme.typography.bodyLarge)
+                                Text("FlippShott dev", style = MaterialTheme.typography.bodyLarge)
                                 Spacer(Modifier.weight(1f))
                                 Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = MaterialTheme.colorScheme.onSurfaceVariant)
                             }
@@ -3432,7 +3451,7 @@ fun SettingsScreen(spamViewModel: SpamViewModel, dolphyViewModel: DolphyViewMode
             item {
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Dolphy ($appVersion)\nЗащищено GNU GPL",
+                    text = "FlippShott ($appVersion)\nЗащищено GNU GPL",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.fillMaxWidth(),

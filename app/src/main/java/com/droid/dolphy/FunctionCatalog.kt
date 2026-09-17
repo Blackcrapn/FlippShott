@@ -10,6 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
+import com.droid.dolphy.flippshott.FlippShottCatalog
 import com.droid.dolphy.hid.HidKeyboardActivity
 import com.droid.dolphy.plugin.PluginIcons
 import com.droid.dolphy.plugin.PluginRegistry
@@ -65,6 +66,10 @@ fun functionDestinationSections(): List<Pair<String, List<FunctionDestination>>>
         FunctionDestination(Icons.Default.Cast, stringResource(R.string.smarttv_cast_title), stringResource(R.string.smarttv_cast_card_description), "other/smarttv_cast", OtherSections.OTHER),
         FunctionDestination(Icons.Default.Router, stringResource(R.string.lan_tools_title), stringResource(R.string.lan_tools_subtitle), "other/lan_scanner", OtherSections.OTHER),
     ) + plugins(OtherSections.OTHER)
+    // FlippShott Lab — 24 новые функции (no-root + root), работают через стандартные Android API / su / Shizuku
+    sections += FlippShottCatalog.SECTION to FlippShottCatalog.features.map { f ->
+        FunctionDestination(f.icon, f.title, f.description, f.route, FlippShottCatalog.SECTION, requiresRoot = f.requiresRoot)
+    }
 
     val pluginSection = plugins(OtherSections.PLUGINS)
     if (pluginSection.isNotEmpty()) sections += OtherSections.PLUGINS to pluginSection

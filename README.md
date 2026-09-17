@@ -1,86 +1,102 @@
-# Dolphy
+# FlippShott
 
-Dolphy is a powerful Android multi-tool developed for wireless protocol research, cybersecurity testing, and hardware emulation. It brings advanced hardware-focused utility functions to stock Android devices completely without root access.
+FlippShott — мощный Android-мультитул для исследования беспроводных протоколов, тестирования кибербезопасности и эмуляции железа. Переносит продвинутый технический функционал на обычные Android-смартфоны **без root-прав**, а с root/Shizuku — расширяет возможности до системного уровня.
 
-Dolphy releases telegram channel - https://t.me/Dolphy_app_official
-
-## The project is protected by a license; please review it!
-
-## Features & Modules
-
-### 🚨 Infrared (IR)
-- Universal Remotes: Comprehensive database integration supporting TVs, ACs, Audio systems, and Projectors (compiled from Flipper-IRDB-main and flipperzero-firmware-dev).
-- IR-Storm: Automated module to send consecutive power-off signals to multiple hardware targets.
-- IR Jammer: Prevents surrounding remote control devices from interacting with nearby hardware.
-
-### 📶 Bluetooth & BLE
-- Audio Device Scanner: Specialized tool to discover, test, and connect to various Bluetooth audio hardware, speakers, and headphones.
-- Advanced NRF Scanner: Professional-grade Bluetooth Low Energy (BLE) device discovery and packet analysis.
-- Dolphy Chat: local chat application operating entirely over BLE protocols with other Dolphy users.
-- HID Keyboard & Mouse: Hardware emulation layer allowing your smartphone to act as a wireless Bluetooth keyboard or mouse.
-- Bluetooth Jammer: Stress-testing module utilizing L2CAP flood attacks to evaluate wireless network resilience.
-
-### 📡 NFC & QR Tools
-- NFC Instruments: Low-level modules designed for reading, writing, and interacting with diverse NFC tags and cards.
-- QR Tools: Fast QR-code generation and specialized remote audio control mechanisms.
-
-### 🌐 Network & Wi-Fi Testing
-- Wi-Fi Attacks: Built-in network diagnostic environment capable of wireless network scanning, Wi-Fi DoS simulations, and credential Brute-forcing.
-- LAN Scanner: Rapid discovery tool to map all connected hosts and devices within the current local Wi-Fi subnet.
-
-### 📺 Media Protocols
-- SmartTV Cast: Native media streaming and broadcasting support using Chromecast, DIAL, DLNA, and UPnP protocols.
-
-## Credits & Special Thanks
-
-Special thanks to the developers and researchers who helped bring this project to life:
-- ZalexDev
-- ars3nb
-- Astrocodee
-
-================================================================================
-
-# Dolphy
-
-Dolphy — это мощный Android-мультитул, созданный для исследования беспроводных протоколов, тестирования кибербезопасности и эмуляции работы различного железа. Приложение переносит продвинутый технический функционал на обычные Android-смартфоны полностью без необходимости получения root-прав.
-
----
+Релизы в Telegram: https://t.me/Dolphy_app_official
 
 ## Функционал и модули
 
 ### 🚨 Инфракрасный порт (IR)
-- Универсальные пульты: Интеграция обширных баз данных для управления телевизорами, кондиционерами, аудиосистемами и проекторами (на основе репозиториев Flipper-IRDB-main и flipperzero-firmware-dev).
-- ИК-Шторм: Автоматизированный модуль для массовой отправки сигналов выключения на окружающие устройства.
-- ИК Глушилка: Блокирует сигналы сторонних пультов, не позволяя им управлять целевой техникой.
+- **Универсальные пульты** — база Flipper-IRDB-main + flipperzero-firmware-dev: TV, AC, Audio, Projectors
+- **ИК-Шторм (TV Be Gone)** — массовая отправка сигналов выключения
+- **ИК Глушилка** — блокирует чужие пульты
 
-### 📶 Bluetooth и BLE
-- Сканер аудиоустройств: Специализированный инструмент для поиска, тестирования и подключения к беспроводным колонкам и наушникам.
-- Продвинутый NRF сканер: Инструмент профессионального уровня для обнаружения BLE-устройств и анализа пакетов данных.
-[26.06.2026 12:40] : - Dolphy Chat: Локальный защищенный чат, работающий напрямую через протоколы BLE между пользователями Dolphy.
-- HID клавиатура и мышь: Эмуляция аппаратных компонентов, позволяющая использовать смартфон как беспроводную клавиатуру или мышь для ПК и других систем.
-- Bluetooth Jammer: Модуль стресс-тестирования беспроводных систем, использующий атаки типа L2CAP flood для проверки устойчивости оборудования.
+### 📶 Bluetooth & BLE
+- **Сканер аудиоустройств** — поиск и тест колонок/наушников
+- **NRF Scanner** — BLE разведка и анализ пакетов
+- **Dolphy Chat** — локальный чат через BLE
+- **HID Клавиатура/Мышь** — телефон как BT HID
+- **Bluetooth Jammer** — L2CAP flood стресс-тест
+- **WhisperPair / DolphyPair** — тихое сопряжение
 
-### 📡 NFC и QR инструменты
-- NFC инструменты: Низкоуровневые модули для чтения, анализа, записи и взаимодействия с различными типами NFC-меток и смарт-карт.
-- QR инструменты: Быстрая генерация QR-кодов и реализация функций удаленного управления аудиосистемами.
+### 📡 NFC & QR
+- **NFC Инструменты** — чтение, запись, эмуляция (HCE Type 4), анализ, мастер-ключи
+- **QR Multi-Tool** — генерация QR, WiFi QR, vCard, штрих-коды
 
 ### 🌐 Сеть и Wi-Fi
-- Wi-Fi атаки: Встроенная среда для диагностики сетей, включающая сканирование радиоэфира, симуляцию Wi-Fi DoS-атак и проверку паролей на устойчивость к брутфорсу.
-- LAN сканер: Быстрое обнаружение и составление карты всех активных устройств в текущей локальной Wi-Fi сети.
+- **Wi-Fi Attacks** — сканирование, DoS симуляция, проверка паролей
+- **LAN Scanner** — карта хостов, Wake-on-LAN, скан портов, админ-панели роутеров
+- **WiFi Print** — IPP печать
 
 ### 📺 Медиа-протоколы
-- SmartTV Cast: Поддержка прямой трансляции и вещания медиапотоков на телевизоры через протоколы Chromecast, DIAL, DLNA и UPnP.
+- **SmartTV Cast** — Chromecast, DIAL, DLNA, UPnP
 
 ---
 
-## Разработка и архитектура
+### 🧪 **FLIPPSHOTT LAB** (24 новые функции)
 
-Приложение разработано с нуля с использованием современного стека Java и Kotlin.
+| Функция | Описание | Root |
+|---------|----------|:---:|
+| **Sub-GHz Database** | Диапазоны 300-928 МГц, протоколы Flipper, валидатор частот | ❌ |
+| **RFID 125 кГц** | EM4100/HID26 калькулятор, Wiegand, база ключей | ❌ |
+| **iButton Manager** | DS1990A CRC8-Dallas, генератор/валидатор ключей | ❌ |
+| **GPIO/UART Справочник** | Распиновка Flipper, консоль USB-UART через OTG | ❌ |
+| **DuckyScript Editor** | Редактор + валидация BadUSB скриптов | ❌ |
+| **BLE Beacon Broadcaster** | iBeacon / Eddystone маяк с телефона | ❌ |
+| **WiFi QR + Evil-Twin** | Генерация WiFi QR, проверка двойников | ❌ |
+| **Wake-on-LAN + Port Scanner** | Пробуждение ПК + скан портов LAN | ❌ |
+| **NFC UID Профили** | HCE-профили эмуляции, random UID | ❌ |
+| **QR Multi-Tool** | Текст, URL, WiFi, vCard, пакеты | ❌ |
+| **IR Raw Analyzer** | Разбор NEC/RC5/Sony, несущая, повторы | ❌ |
+| **Ultrasonic Lab** | Детектор 15-22 кГц через микрофон | ❌ |
+| **Sensor Lab** | Аксель, гиро, магнитометр, свет, близость | ❌ |
+| **GPS NMEA Logger** | Координаты, спутники, NMEA чексуммы | ❌ |
+| **App Permission Auditor** | Аудит опасных разрешений установленных приложений | ❌ |
+| **File HEX Inspector** | HEX encode/decode, dump, UTF-8 preview | ❌ |
+| **OTG Serial Console** | USB Host API: CH340/CP2102/PN532/CC1101 | ❌ |
+| **Root System Tweaker** | wm density/size, getprop, settings | ✅ |
+| **Hosts AdBlock** | Блокировка рекламы через /etc/hosts | ✅ |
+| **WiFi Password Extractor** | Сохранённые пароли WiFi (Shizuku/ROOT) | ✅ |
+| **System App Freezer** | pm disable/enable (Shizuku/ROOT) | ✅ |
+| **SELinux + Reboot Menu** | setenforce, reboot recovery/bootloader | ✅ |
+| **Logcat + dmesg** | Системные логи, kernel log (ROOT) | ✅ |
+| **Netstat + Iptables** | Соединения, firewall правила (ROOT) | ✅ |
+
 ---
 
-## Благодарности / Credits
+### ⚙️ **FlippShott Кастомизация** (в Настройках)
+- **12 готовых акцентов** + свой **#HEX** цвет
+- **AMOLED чёрный** (true black)
+- **Экран всегда включён** (FLAG_KEEP_SCREEN_ON)
+- **Вибрация/Haptics** вкл/выкл
+- **Сетка поверх (Grid)** инженерная
+- **Скругление карточек** 8–32 dp слайдер
+- **Кнопка сброса** темы в один клик
 
-Искренняя благодарность разработчикам и исследователям, внесшим вклад в развитие проекта:
+---
+
+## Сборка
+
+```bash
+# Локально
+./gradlew assembleRelease
+
+# Или через GitHub Actions (см. .github/workflows/build.yml)
+```
+
+Требования: JDK 21, Android SDK 36, Gradle 8.11+
+
+---
+
+## Лицензия
+
+GPL-3.0 — некоторые ресурсы и код основаны на прошивке Flipper Zero (Copyright © Flipper Devices).
+
+---
+
+## Благодарности
+
 - ZalexDev
 - ars3nb
 - Astrocodee
+- Flipper Zero Community
