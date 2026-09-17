@@ -3431,7 +3431,7 @@ fun SettingsScreen(spamViewModel: SpamViewModel, dolphyViewModel: DolphyViewMode
                             SettingsItem(onClick = { uriHandler.openUri("https://t.me/Dolphy_app_official") }) {
                                 Icon(Icons.AutoMirrored.Filled.Send, null, tint = accentColor, modifier = Modifier.size(24.dp))
                                 Spacer(Modifier.width(12.dp))
-                                Text("FlippShott dev", style = MaterialTheme.typography.bodyLarge)
+                                Text("Флипп Шот dev", style = MaterialTheme.typography.bodyLarge)
                                 Spacer(Modifier.weight(1f))
                                 Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = MaterialTheme.colorScheme.onSurfaceVariant)
                             }
@@ -3451,7 +3451,7 @@ fun SettingsScreen(spamViewModel: SpamViewModel, dolphyViewModel: DolphyViewMode
             item {
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "FlippShott ($appVersion)\nЗащищено GNU GPL",
+                    text = "Флипп Шот ($appVersion)\nЗащищено GNU GPL",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.fillMaxWidth(),

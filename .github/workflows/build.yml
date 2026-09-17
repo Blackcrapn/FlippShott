@@ -43,6 +43,11 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           cache: 'gradle'
 
+      - name: Generate debug keystore for signing
+        run: |
+          mkdir -p app/keystore
+          keytool -genkeypair -v -keystore app/keystore/release.keystore -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=FlippShott, OU=FlippShott, O=FlippShott, L=Unknown, ST=Unknown, C=US" -noprompt
+
       - name: Use pre-installed Android SDK (avoid ANDROID_HOME conflict)
         run: |
           # Ubuntu runner has Android SDK at /usr/local/lib/android/sdk

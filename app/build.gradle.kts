@@ -35,20 +35,28 @@ android {
 
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("keystore/release.keystore")
+            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "android"
+            keyAlias = System.getenv("KEY_ALIAS") ?: "androiddebugkey"
+            keyPassword = System.getenv("KEY_PASSWORD") ?: "android"
+        }
+    }
 
     buildTypes {
         debug {
-
             isMinifyEnabled = false
             isShrinkResources = false
             isDebuggable = true
-
+            signingConfig = signingConfigs.getByName("release")
         }
         release {
             isCrunchPngs = false
             isMinifyEnabled = true
             isShrinkResources = true
             isProfileable = false
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
